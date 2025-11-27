@@ -16,5 +16,20 @@ namespace HabitTrackerApp
         {
             InitializeComponent();
         }
+
+        private void btnAddHabit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnMarkCompleted_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnViewStats_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

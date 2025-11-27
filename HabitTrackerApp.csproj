@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Views\AddHabitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AddHabitForm.Designer.cs">
+      <DependentUpon>AddHabitForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

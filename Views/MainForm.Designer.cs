@@ -61,6 +61,7 @@
             this.btnAddHabit.TabIndex = 2;
             this.btnAddHabit.Text = "Add Habit";
             this.btnAddHabit.UseVisualStyleBackColor = true;
+            this.btnAddHabit.Click += new System.EventHandler(this.btnAddHabit_Click);
             // 
             // btnMarkCompleted
             // 
@@ -70,6 +71,7 @@
             this.btnMarkCompleted.TabIndex = 3;
             this.btnMarkCompleted.Text = "Mark Completed";
             this.btnMarkCompleted.UseVisualStyleBackColor = true;
+            this.btnMarkCompleted.Click += new System.EventHandler(this.btnMarkCompleted_Click);
             // 
             // btnViewStats
             // 
@@ -79,6 +81,7 @@
             this.btnViewStats.TabIndex = 4;
             this.btnViewStats.Text = "View Stats";
             this.btnViewStats.UseVisualStyleBackColor = true;
+            this.btnViewStats.Click += new System.EventHandler(this.btnViewStats_Click);
             // 
             // MainForm
             // 
