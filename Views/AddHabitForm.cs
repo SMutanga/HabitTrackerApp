@@ -19,7 +19,14 @@ namespace HabitTrackerApp.Views
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txtHabitName.Text))
+            {
+                MessageBox.Show("Please enter a habit name.");
+                return;
+            }
 
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
 
         public string HabitName
