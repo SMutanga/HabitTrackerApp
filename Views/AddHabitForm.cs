@@ -17,6 +17,8 @@ namespace HabitTrackerApp.Views
             InitializeComponent();
         }
 
+
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtHabitName.Text))
@@ -28,6 +30,8 @@ namespace HabitTrackerApp.Views
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
+
+
 
         public string HabitName
         {
