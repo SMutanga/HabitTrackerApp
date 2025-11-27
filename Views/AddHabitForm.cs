@@ -16,5 +16,16 @@ namespace HabitTrackerApp.Views
         {
             InitializeComponent();
         }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public string HabitName
+        {
+            get { return txtHabitName.Text.Trim(); }
+        }
+
     }
 }
