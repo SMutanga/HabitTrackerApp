@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using HabitTrackerApp.Views;
+using HabitTrackerCore.Models;
 
 namespace HabitTrackerApp
 {
@@ -24,11 +25,11 @@ namespace HabitTrackerApp
             {
                 if (form.ShowDialog() == DialogResult.OK)
                 {
-                    lstHabits.Items.Add(form.HabitName);
+                    var habit = new Habit(form.HabitName);
+                    lstHabits.Items.Add(habit);
                 }
-
             }
-           
+
         }
 
         private void btnMarkCompleted_Click(object sender, EventArgs e)
