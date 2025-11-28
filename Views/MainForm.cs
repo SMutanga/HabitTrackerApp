@@ -22,6 +22,17 @@ namespace HabitTrackerApp
 
         private HabitService _habitService = new HabitService();
 
+        private void RefreshHabitList()
+        {
+            lstHabits.Items.Clear();
+
+            foreach (var habit in _habitService.GetAll())
+            {
+                lstHabits.Items.Add(habit);
+            }
+        }
+
+
         private void btnAddHabit_Click(object sender, EventArgs e)
         {
             using (var form = new AddHabitForm())
