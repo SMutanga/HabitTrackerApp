@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using HabitTrackerApp.Views;
 using HabitTrackerCore.Models;
+using HabitTrackerCore.Services;
 
 namespace HabitTrackerApp
 {
@@ -34,6 +35,15 @@ namespace HabitTrackerApp
 
         private void btnMarkCompleted_Click(object sender, EventArgs e)
         {
+            if (lstHabits.SelectedItem is Habit selectedHabit)
+            {
+                _habitService.CompleteHabit(selectedHabit);
+                RefreshHabitList();
+            }
+            else
+            {
+                MessageBox.Show("Please select a habit to mark as completed.");
+            }
 
         }
 
