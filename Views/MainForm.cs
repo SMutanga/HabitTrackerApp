@@ -20,6 +20,8 @@ namespace HabitTrackerApp
             InitializeComponent();
         }
 
+        private HabitService _habitService = new HabitService();
+
         private void btnAddHabit_Click(object sender, EventArgs e)
         {
             using (var form = new AddHabitForm())
