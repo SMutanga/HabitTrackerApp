@@ -39,11 +39,10 @@ namespace HabitTrackerApp
             {
                 if (form.ShowDialog() == DialogResult.OK)
                 {
-                    var habit = new Habit(form.HabitName);
-                    lstHabits.Items.Add(habit);
+                    _habitService.AddHabit(form.HabitName);
+                    RefreshHabitList();
                 }
             }
-
         }
 
         private void btnMarkCompleted_Click(object sender, EventArgs e)
@@ -62,7 +61,15 @@ namespace HabitTrackerApp
 
         private void btnViewStats_Click(object sender, EventArgs e)
         {
+            var stats = _habitService.GetStats();
 
+            string message =
+                $"Total Habits: {stats.total}\n" +
+                $"Completed: {stats.completed}\n" +
+                $"Pending: {stats.pending}\n" +
+                $"Completion Rate: {stats.rate:F2}%";
+
+            MessageBox.Show(message, "Habit Statistics");
         }
     }
 }
