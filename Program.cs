@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HabitTrackerCore.Services;
 
 namespace HabitTrackerApp
 {
@@ -14,9 +15,15 @@ namespace HabitTrackerApp
         [STAThread]
         static void Main()
         {
+
+            IHabitManagementService habitManagement = new HabitService();
+            IHabitStatisticsService habitStatistics = (HabitService)habitManagement;
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            Application.Run(new MainForm(habitManagement, habitStatistics));
+
+
         }
     }
 }

@@ -8,14 +8,14 @@ namespace HabitTrackerApp
 {
     public partial class MainForm : Form
     {
-        private readonly IHabitService _habitService;
+        private readonly IHabitManagementService _habitManagement;
+        private readonly IHabitStatisticsService _habitStatistics;
 
-        public MainForm(IHabitService habitService)
+        public MainForm(IHabitManagementService management, IHabitStatisticsService statistics)
         {
             InitializeComponent();
-
-            _habitService = habitService; 
-
+            _habitManagement = management;
+            _habitStatistics = statistics;
             RefreshHabitList();
         }
 
@@ -23,7 +23,7 @@ namespace HabitTrackerApp
         {
             lstHabits.Items.Clear();
 
-            foreach (var habit in _habitService.GetAll())
+            foreach (var habit in _habitManagement.GetAll())
             {
                 lstHabits.Items.Add(habit);
             }
@@ -35,7 +35,7 @@ namespace HabitTrackerApp
             {
                 if (form.ShowDialog() == DialogResult.OK)
                 {
-                    _habitService.AddHabit(form.HabitName);
+                    _habitManagement.AddHabit(form.HabitName);
                     RefreshHabitList();
                 }
             }
@@ -45,7 +45,7 @@ namespace HabitTrackerApp
         {
             if (lstHabits.SelectedItem is Habit selectedHabit)
             {
-                _habitService.CompleteHabit(selectedHabit);
+                _habitManagement.CompleteHabit(selectedHabit);
                 RefreshHabitList();
             }
             else
@@ -56,7 +56,7 @@ namespace HabitTrackerApp
 
         private void btnViewStats_Click(object sender, EventArgs e)
         {
-            var stats = _habitService.GetStats();
+            var stats = _habitStatistics.GetStats();
 
             string message =
         $"Total Habits: {stats.total}\n" +
