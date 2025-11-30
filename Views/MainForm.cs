@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using HabitTrackerApp.Views;
 using HabitTrackerCore.Models;
@@ -15,12 +8,16 @@ namespace HabitTrackerApp
 {
     public partial class MainForm : Form
     {
-        public MainForm()
+        private readonly IHabitService _habitService;
+
+        public MainForm(IHabitService habitService)
         {
             InitializeComponent();
-        }
 
-        private HabitService _habitService = new HabitService();
+            _habitService = habitService; 
+
+            RefreshHabitList();
+        }
 
         private void RefreshHabitList()
         {
@@ -31,7 +28,6 @@ namespace HabitTrackerApp
                 lstHabits.Items.Add(habit);
             }
         }
-
 
         private void btnAddHabit_Click(object sender, EventArgs e)
         {
@@ -56,7 +52,6 @@ namespace HabitTrackerApp
             {
                 MessageBox.Show("Please select a habit to mark as completed.");
             }
-
         }
 
         private void btnViewStats_Click(object sender, EventArgs e)
@@ -64,10 +59,10 @@ namespace HabitTrackerApp
             var stats = _habitService.GetStats();
 
             string message =
-                $"Total Habits: {stats.total}\n" +
-                $"Completed: {stats.completed}\n" +
-                $"Pending: {stats.pending}\n" +
-                $"Completion Rate: {stats.rate:F2}%";
+        $"Total Habits: {stats.total}\n" +
+        $"Completed: {stats.completed}\n" +
+        $"Pending: {stats.pending}\n" +
+        $"Completion Rate: {stats.rate:F2}%";
 
             MessageBox.Show(message, "Habit Statistics");
         }
