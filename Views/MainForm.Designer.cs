@@ -33,6 +33,7 @@
             this.btnAddHabit = new System.Windows.Forms.Button();
             this.btnMarkCompleted = new System.Windows.Forms.Button();
             this.btnViewStats = new System.Windows.Forms.Button();
+            this.btnResetAllHabits = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -55,7 +56,7 @@
             // 
             // btnAddHabit
             // 
-            this.btnAddHabit.Location = new System.Drawing.Point(473, 92);
+            this.btnAddHabit.Location = new System.Drawing.Point(473, 104);
             this.btnAddHabit.Name = "btnAddHabit";
             this.btnAddHabit.Size = new System.Drawing.Size(107, 23);
             this.btnAddHabit.TabIndex = 2;
@@ -75,7 +76,7 @@
             // 
             // btnViewStats
             // 
-            this.btnViewStats.Location = new System.Drawing.Point(473, 203);
+            this.btnViewStats.Location = new System.Drawing.Point(473, 187);
             this.btnViewStats.Name = "btnViewStats";
             this.btnViewStats.Size = new System.Drawing.Size(107, 23);
             this.btnViewStats.TabIndex = 4;
@@ -83,11 +84,22 @@
             this.btnViewStats.UseVisualStyleBackColor = true;
             this.btnViewStats.Click += new System.EventHandler(this.btnViewStats_Click);
             // 
+            // btnResetAllHabits
+            // 
+            this.btnResetAllHabits.Location = new System.Drawing.Point(473, 279);
+            this.btnResetAllHabits.Name = "btnResetAllHabits";
+            this.btnResetAllHabits.Size = new System.Drawing.Size(107, 23);
+            this.btnResetAllHabits.TabIndex = 5;
+            this.btnResetAllHabits.Text = "Reset";
+            this.btnResetAllHabits.UseVisualStyleBackColor = true;
+            this.btnResetAllHabits.Click += new System.EventHandler(this.btnResetAllHabits_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 461);
+            this.Controls.Add(this.btnResetAllHabits);
             this.Controls.Add(this.btnViewStats);
             this.Controls.Add(this.btnMarkCompleted);
             this.Controls.Add(this.btnAddHabit);
@@ -96,7 +108,6 @@
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Habit Tracker";
-            this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -109,6 +120,7 @@
         private System.Windows.Forms.Button btnAddHabit;
         private System.Windows.Forms.Button btnMarkCompleted;
         private System.Windows.Forms.Button btnViewStats;
+        private System.Windows.Forms.Button btnResetAllHabits;
     }
 }
 

@@ -66,5 +66,12 @@ namespace HabitTrackerApp
 
             MessageBox.Show(message, "Habit Statistics");
         }
+
+        private void btnResetAllHabits_Click(object sender, EventArgs e)
+        {
+            _habitManagement.ResetAllHabits();
+            RefreshHabitList();
+            MessageBox.Show("All habits have been reset!");
+        }
     }
 }
