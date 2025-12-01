@@ -6,28 +6,30 @@ This program was made using C# in Windows Forms with a user-friendly interface.
 This program includes two unit tests, SOLID principles, and an experimental branch.
 
 ## Features
-- Add, edit, and delete habits
+- Add, edit, reset and delete habits
 - Mark habits as completed for the day
 - View progress over time with simple statistics
 - User-friendly interface
 - Unit tests to ensure reliability
 - Adheres to SOLID principles for maintainable code
-- Experimental branch for testing new features
+- Experimental branch for reseting habit completion status
 
 
 ## File Structure
 HabitTrackerApp/
-├──Controllers/
 ├──Views/AddHabitForm.cs, MainForm.cs
+|──Program.cs
+
 
 HabitTrackerCore/
-├──Interfaces/
+├──Interfaces/IHabitManagementService.cs, IHabitStatisticsService.cs
 ├──Models/Habit.cs
 ├──Services/HabitService.cs
-├──Models/
+
 
 HabitTrackerTests/
-├──UnitTest1.cs
+├─AddHabitTest.cs
+├─MarkCompletedTest.cs
 
 ## Installation Instructions
 1. Clone the repository from GitHub.
