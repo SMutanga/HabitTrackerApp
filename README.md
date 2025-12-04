@@ -1,4 +1,4 @@
-﻿# Habit Tracker Project!#
+﻿# Habit Tracker Project#
 
 ## Overview
 The Habit Tracker Project is a simple and effective way to monitor and maintain your daily habits.
@@ -11,7 +11,7 @@ This program includes two unit tests, SOLID principles, and an experimental bran
 - View progress over time with simple statistics
 - User-friendly interface
 - Unit tests to ensure reliability
-- Adheres to SOLID principles for maintainable code
+- Adheres to SOLID principles for a maintainable code
 - Experimental branch for reseting habit completion status
 
 
